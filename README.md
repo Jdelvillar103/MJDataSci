@@ -1,2 +1,2 @@
 # MJDataSci
-Math4322 Final Project on Michael Jordan's statistics
+ Math4322 Final Project on Michael Jordan's statistics
