@@ -13,6 +13,8 @@ dataset$Win <- factor(dataset$Win)
 dataset$GS <- factor(dataset$GS)
 #Fills any NA values as Zeroes
 dataset[is.na(dataset)]<-0
+
+avg = 0
 #For loop used to generate 10 different tests
 for (val in i)
 {
@@ -32,7 +34,11 @@ for (val in i)
   print(summary(MJ.log))
   #prints The test prediction error
   print(mean(MJ.log.predict != MJ.test$Win))
+  avg = avg + mean(MJ.log.predict != MJ.test$Win)
 }
+#prints average error across all runs
+print(avg/10)
+
 #attach(dataset)
 par(mfrow=c(2,3))
 boxplot(Age ~ Win, data = dataset, main = "Age vs Win")
