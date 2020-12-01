@@ -35,7 +35,9 @@ for (val in i)
   #prints The test prediction error
   print(mean(MJ.log.predict != MJ.test$Win))
   avg = avg + mean(MJ.log.predict != MJ.test$Win)
+  
 }
+#pairs(MJ.train)
 #prints average error across all runs
 print(avg/10)
 
@@ -43,7 +45,7 @@ print(avg/10)
 par(mfrow=c(2,3))
 boxplot(Age ~ Win, data = dataset, main = "Age vs Win")
 boxplot(Diff~ Win, data = dataset, main = "Point Diff vs Win")
-boxplot(GS ~ Win, data = dataset, main = "Game Start vs Win") 
+#boxplot(GS ~ Win, data = dataset, main = "Game Start vs Win") 
 boxplot(MP ~ Win, data = dataset, main = "Minutes Played vs Win") 
 boxplot(FG_PCT ~ Win, data = dataset, main = "Field Goal Percentage vs Win")
 boxplot(TP_PCT ~ Win, data = dataset, main = "TP_PCT vs Win")
